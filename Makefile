@@ -2,10 +2,10 @@ default: wasm
 
 # Common
 ifdef  DEBUG
-    COMPILER_OPTIONS=-g3 --profiling-funcs -s ASSERTIONS=1 -fsanitize=address -DNDEBUG
+    COMPILER_OPTIONS=-g3 --profiling-funcs -s ASSERTIONS=1 -fsanitize=address -DNDEBUG -DNO_SWE_GLP
     LINKER_OPTIONS=-Wl,--no-entry
 else
-    COMPILER_OPTIONS=-fPIC -Oz -fno-exceptions -fno-rtti -fno-stack-protector -ffunction-sections -fdata-sections -fno-math-errno -DNDEBUG
+    COMPILER_OPTIONS=-fPIC -Oz -fno-exceptions -fno-rtti -fno-stack-protector -ffunction-sections -fdata-sections -fno-math-errno -DNDEBUG -DNO_SWE_GLP
     LINKER_OPTIONS=-Wl,--gc-sections,--no-entry
 endif
 

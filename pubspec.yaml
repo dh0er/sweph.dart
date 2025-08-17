@@ -15,7 +15,8 @@ dependencies:
 
 dependency_overrides:
   wasm_ffi:
-    repository: https://github.com/dh0er/wasm_ffi.git
+    git:
+      url: https://github.com/dh0er/wasm_ffi.git
 
 dev_dependencies:
   ffigen: ^14.0.0

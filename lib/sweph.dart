@@ -13,6 +13,7 @@ import 'src/utils.dart';
 import 'src/wasm_asset_saver.dart'
     if (dart.library.ffi) 'src/ffi_asset_saver.dart';
 
+import 'wasm_ffi_signatures.g.dart' as wasm_ffi;
 export 'src/types.dart';
 export 'src/wasm_asset_saver.dart'
     if (dart.library.ffi) 'src/ffi_asset_saver.dart';
@@ -52,6 +53,11 @@ class Sweph {
     AssetLoader? assetLoader,
     String? epheFilesPath,
   }) async {
+    // Register wrappers for dart2wasm JSFunction exports before any lookups
+    if (kIsWeb) {
+      wasm_ffi.registerSignatures();
+    }
+
     _ffiHelper = await FfiHelper.load(
       modulePath ?? 'sweph',
       options: {

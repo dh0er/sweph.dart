@@ -3,6 +3,8 @@ import 'dart:typed_data';
 import 'package:universal_ffi/ffi.dart';
 import 'abstract_asset_saver.dart';
 
+// Register write_file function signature
+@WasmRegisterSignature('int Function(int, int, int, int)')
 typedef WriteFile = int Function(
   int path,
   int contents,

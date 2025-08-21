@@ -13,7 +13,8 @@ import 'src/utils.dart';
 import 'src/wasm_asset_saver.dart'
     if (dart.library.ffi) 'src/ffi_asset_saver.dart';
 
-import 'wasm_ffi_signatures.g.dart' as wasm_ffi;
+import 'wasm_ffi_signatures_stub.g.dart'
+    if (dart.library.js_interop) 'wasm_ffi_signatures.g.dart' as wasm_ffi;
 export 'src/types.dart';
 export 'src/wasm_asset_saver.dart'
     if (dart.library.ffi) 'src/ffi_asset_saver.dart';

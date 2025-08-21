@@ -11,12 +11,9 @@ environment:
 
 dependencies:
   path: ^1.9.0
-  universal_ffi: ^1.1.0
-
-dependency_overrides:
-  wasm_ffi:
+  universal_ffi:
     git:
-      url: https://github.com/dh0er/wasm_ffi.git
+      url: https://github.com/dh0er/universal_ffi.git
 
 dev_dependencies:
   ffigen: ^14.0.0
